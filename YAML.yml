@@ -1,0 +1,37 @@
+---
+global_variables:
+  ansible_connection: network_cli
+host_groups:
+  - name: ungrouped # ansible default host group "ungrouped", for all hosts that are not in any other host groups
+    group_variables:
+      ansible_network_os: ios      
+      ansible_become: yes
+      ansible_become_method: enable
+      descr: "in ungrouped group"
+    host_variables:
+      ansible_ssh_user: $credential.username      
+      ansible_ssh_pass: $credential.password
+      vendor: $device.vendor
+  - name: cisco_router # auto-generated, defined from UI
+    group_variables:
+      ansible_network_os: ios      
+      ansible_become: yes
+      ansible_become_method: enable
+      descr: "cisco_router group"
+    host_variables:   
+      ansible_ssh_user: $credential.username      
+      ansible_ssh_pass: $credential.password
+      vendor: $device.vendor
+      visible_intf: $interface._visible
+      mgmt_intf: $device.management_interface
+      all_intf: $interface._all
+- name: cisco_switch # auto-generated, defined from UI
+    group_variables:
+      ansible_network_os: ios      
+      ansible_become: yes
+      ansible_become_method: enable
+    host_variables:   
+      ansible_ssh_user: $credential.username      
+      ansible_ssh_pass: $credential.password
+      vendor: $device.vendor
+      model: $device.model
