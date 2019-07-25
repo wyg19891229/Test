@@ -107,6 +107,7 @@ def setup(app):
     app.add_stylesheet('custom.css')
     app.add_javascript("custom.js")
     app.add_javascript("https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js")
+    app.add_javascript("my-project-config.js")
     app.add_javascript("https://unpkg.com/rate-the-docs")
 
 # relative to this directory. They are copied after the builtin static files,
