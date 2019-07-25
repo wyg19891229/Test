@@ -1,0 +1,48 @@
+{
+  "name": "rate-the-docs",
+  "version": "0.1.1",
+  "description": "Feedback widget for Read the Docs documentation",
+  "keywords": [
+    "read-the-docs",
+    "rating",
+    "feedback-widget",
+    "readthedocs",
+    "rtd",
+    "documentation",
+    "docs",
+    "feedback"
+  ],
+  "main": "dist/rate-the-docs.min.js",
+  "module": "dist/rate-the-docs.es.min.js",
+  "files": [
+    "dist/**",
+    "src/**",
+    ".babelrc.js",
+    ".editorconfig",
+    ".gitignore",
+    "LICENSE",
+    "README.md",
+    "_readme/**",
+    "package.json",
+    "rollup.config.js"
+  ],
+  "repository": "https://github.com/medmunds/rate-the-docs",
+  "author": "Mike Edmunds",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "rollup -c && rollup -c --environment BUILD:production"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-preset-minify": "^0.5.0",
+    "postcss-header": "^1.0.0",
+    "postcss-preset-env": "^6.6.0",
+    "rollup": "^1.9.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-html": "^0.2.1",
+    "rollup-plugin-postcss": "^2.0.3"
+  },
+  "dependencies": {}
+}
